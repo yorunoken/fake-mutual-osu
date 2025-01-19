@@ -1,0 +1,34 @@
+// ==UserScript==
+// @name         Fake self-mutual
+// @namespace    https://github.com/yorunoken/fake-mutual-osu
+// @version      2025-01-19
+// @description  try to take over the world!
+// @author       yorunoken
+// @match        https://osu.ppy.sh/users/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=ppy.sh
+// @grant        none
+// ==/UserScript==
+
+const fireOnHashChangesToo = true;
+setInterval(function () {
+    if (this.lastPathStr !== location.pathname || this.lastQueryStr !== location.search || (fireOnHashChangesToo && this.lastHashStr !== location.hash)) {
+        this.lastPathStr = location.pathname;
+        this.lastQueryStr = location.search;
+        this.lastHashStr = location.hash;
+        gmMain();
+    }
+}, 111);
+
+async function gmMain() {
+    if (!location.href.startsWith("https://osu.ppy.sh/users/")) {
+        return false;
+    }
+
+    const userActionButton = document.querySelector(".user-action-button");
+
+    if (userActionButton) {
+        userActionButton.classList.add("user-action-button--mutual");
+    } else {
+        console.log("User action button not found, aborting.");
+    }
+}
