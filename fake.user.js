@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Fake self-mutual
 // @namespace    https://github.com/yorunoken/fake-mutual-osu
-// @version      2025-01-19
-// @description  try to take over the world!
+// @version      2025-01-21
+// @description  Simple userscript that will self-mutual you. (Client only)
 // @author       yorunoken
 // @match        https://osu.ppy.sh/users/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=ppy.sh
