@@ -19,7 +19,7 @@ setInterval(function () {
     }
 }, 111);
 
-async function gmMain() {
+function gmMain() {
     if (!location.href.startsWith("https://osu.ppy.sh/users/")) {
         return false;
     }
